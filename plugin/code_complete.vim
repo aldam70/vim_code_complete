@@ -237,40 +237,26 @@ endfunction
 let g:template = {}
 let g:template['c'] = {}
 let g:template['c']['cc'] = "/*  */\<left>\<left>\<left>"
-let g:template['c']['cd'] = "/*\<cr> */\<left>\<left>\<left>"
-let g:template['c']['cfun'] = "/*\<cr>=== FunctionName ======================================================================\<cr>".repeat("\<space>",7)."Name: |".g:rs."...".g:re."|\<cr>".repeat("\<backspace>",7)."Description: ".g:rs."...".g:re."\<cr>=======================================================================================\<cr>/"
+let g:template['c']['cfun'] = "/*\<cr>=== Function ==========================================================================\<cr>".repeat("\<space>",7)."Name: \<cr>Description: \<cr>".repeat("\<backspace>",3)." =======================================================================================\<cr>/\<esc>"
 
-let g:template['c']['ccme'] = "/*\<cr>--------------------------------------------------------------------------------------\<cr>".repeat("\<space>",5)."Class: |".g:rs."...".g:re."|\<cr>".repeat("\<backspace>",1)."Method: |".g:rs."...".g:re."| :: |".g:rs."...".g:re."|\<cr>".repeat("\<backspace>",5)."Description: ".g:rs."...".g:re."\<cr>--------------------------------------------------------------------------------------\<cr>/"
-
-let g:template['c']['ccla'] = "/*\<cr>=====================================================================================\<cr>".repeat("\<space>",6)."Class: |".g:rs."...".g:re."|\<cr>".repeat("\<backspace>",6)."Description: ".g:rs."...".g:re."\<cr>=====================================================================================\<cr>/"
-
-let g:template['c']['ccff'] = "/*\<cr>=====================================================================================\<cr>\<cr>".repeat("\<space>",4)."Filename: |".g:rs."...".g:re."|\<cr>\<cr>".repeat("\<backspace>",3)."Description: ".g:rs."...".g:re."\<cr>\<cr>".repeat("\<space>",4)."Version: ".g:rs."...".g:re."\<cr>Created: |".g:rs."...".g:re."| |".g:rs."...".g:re."|\<cr>".repeat("\<backspace>",1)."Revision: ".g:rs."...".g:re."\<cr>Compiler: ".g:rs."...".g:re."\<cr>\<cr>".repeat("\<space>",2)."Author: |".g:rs."...".g:re."|\<cr>".repeat("\<backspace>",6)."Organization: |".g:rs."...".g:re."|\<cr>\<cr>=====================================================================================\<cr>/"
-
-let g:template['c']['adam'] = "/*Begin, Adam Huang*/\<cr>/*End*/"
+let g:template['c']['ccla'] = "/*\<cr>=== Class =============================================================================\<cr>".repeat("\<space>",7)."Name: \<cr>Description: \<cr>".repeat("\<backspace>",3)." =====================================================================================\<cr>/\<esc>"
 
 let g:template['c']['de'] = "#define\<c-i>\<c-i>"
-let g:template['c']['ifde'] = "#ifdef\<c-i>".g:rs."...".g:re."\<cr>".g:rs."...".g:re."\<cr>#endif"
-let g:template['c']['ifnde'] = "#ifndef\<c-i>".g:rs."...".g:re."\<cr>#define\<c-i>".g:rs."...".g:re."\<cr>#endif"
-let g:template['c']['ifpre'] = "#if\<c-i>".g:rs."...".g:re."\<cr>".g:rs."...".g:re."\<cr>#endif"
-let g:template['c']['in'] = "#include\<c-i>\"\"\<left>"
-let g:template['c']['is'] = "#include\<c-i><>\<left>"
+let g:template['c']['in'] = "#include\<space>\"\"\<left>"
+let g:template['c']['is'] = "#include\<space><>\<left>"
 let g:template['c']['ff'] = "#ifndef  \<c-r>=GetFileName()\<cr>\<CR>#define  \<c-r>=GetFileName()\<cr>".
-            \repeat("\<cr>",5)."#endif  /*\<c-r>=GetFileName()\<cr>*/".repeat("\<up>",3)
-let g:template['c']['for'] = "for(".g:rs."...".g:re."; ".g:rs."...".g:re."; ".g:rs."...".g:re.")\<cr>{\<cr>".
-            \g:rs."...".g:re."\<cr>}\<cr>"
-let g:template['c']['main'] = "int main(int argc, char \*argv\[\])\<cr>{\<cr>".g:rs."...".g:re."\<cr>}"
-let g:template['c']['switch'] = "switch(".g:rs."...".g:re.")\<cr>{\<cr>case ".g:rs."...".g:re.":\<cr>break;\<cr>case ".
-            \g:rs."...".g:re.":\<cr>break;\<cr>default :\<cr>break;\<cr>}"
-let g:template['c']['if'] = "if(".g:rs."...".g:re.")\<cr>{\<cr>".g:rs."...".g:re."\<cr>}"
-let g:template['c']['ife'] = "if(".g:rs."...".g:re.")\<cr>{\<cr>".g:rs."...".g:re."\<cr>}\<cr>else\<cr>{\<cr>".g:rs."...".
-            \g:re."\<cr>}"
-let g:template['c']['ifn'] = "if(".g:rs."...".g:re.")\<cr>".g:rs."...".g:re.""
-let g:template['c']['ifen'] = "if(".g:rs."...".g:re.")\<cr>".g:rs."...".g:re."\<cr>else\<cr>".g:rs."...".
-            \g:re.""
-let g:template['c']['while'] = "while(".g:rs."...".g:re.")\<cr>{\<cr>".g:rs."...".g:re."\<cr>}"
+            \repeat("\<cr>",5)."#endif  /*\<c-r>=GetFileName()\<cr>*/".repeat("\<up>",3)."\<esc>"
 
-let g:template['c']['typest'] = "typedef struct ".g:rs."...".g:re." {\<cr>".g:rs."...".g:re."\<cr>} ".g:rs."...".g:re.";\<cr>"
-let g:template['c']['class'] = "class ".g:rs."...".g:re." {\<cr>".g:rs."...".g:re."\<cr>};"
+let g:template['c']['for'] = "for(; ;)\<cr>{\<cr>}".repeat("\<left>", 8)
+let g:template['c']['wi'] = "while()\<cr>{\<cr>}".repeat("\<left>", 5)
+let g:template['c']['if'] = "if()\<cr>{\<cr>}".repeat("\<left>", 5)
+let g:template['c']['ife'] = "if()\<cr>{\<cr>}\<cr>else\<cr>{\<cr>}".repeat("\<left>", 14)
+
+let g:template['c']['main'] = "int main(int argc, char \*argv\[\])\<cr>{\<cr>}\<up>\<esc>"
+let g:template['c']['sw'] = "switch()\<cr>{\<cr>case:\<cr>break;\<cr>case:\<cr>break;\<cr>default:\<cr>break;\<cr>}".repeat("\<right>", 8)
+
+let g:template['c']['cl'] = "class \<cr>{\<cr>};".repeat("\<left>", 5)
+let g:template['c']['su'] = "struct \<cr>{\<cr>};".repeat("\<left>", 5)
 
 " ---------------------------------------------
 " C++ templates
