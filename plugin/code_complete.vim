@@ -247,16 +247,16 @@ let g:template['c']['is'] = "#include\<space><>\<left>"
 let g:template['c']['ff'] = "#ifndef  \<c-r>=GetFileName()\<cr>\<CR>#define  \<c-r>=GetFileName()\<cr>".
             \repeat("\<cr>",5)."#endif  /*\<c-r>=GetFileName()\<cr>*/".repeat("\<up>",3)."\<esc>"
 
-let g:template['c']['for'] = "for(; ;)\<cr>{\<cr>}".repeat("\<left>", 8)
-let g:template['c']['wi'] = "while()\<cr>{\<cr>}".repeat("\<left>", 5)
-let g:template['c']['if'] = "if()\<cr>{\<cr>}".repeat("\<left>", 5)
-let g:template['c']['ife'] = "if()\<cr>{\<cr>}\<cr>else\<cr>{\<cr>}".repeat("\<left>", 14)
+let g:template['c']['for'] = "for(; ;)\<cr>{\<cr>}"
+let g:template['c']['wi'] = "while()\<cr>{\<cr>}"
+let g:template['c']['if'] = "if()\<cr>{\<cr>}"
+let g:template['c']['ife'] = "if()\<cr>{\<cr>}\<cr>else\<cr>{\<cr>}"
 
 let g:template['c']['main'] = "int main(int argc, char \*argv\[\])\<cr>{\<cr>}\<up>\<esc>"
-let g:template['c']['sw'] = "switch()\<cr>{\<cr>case:\<cr>break;\<cr>case:\<cr>break;\<cr>default:\<cr>break;\<cr>}".repeat("\<right>", 8)
+let g:template['c']['sw'] = "switch()\<cr>{\<cr>case:\<cr>break;\<cr>case:\<cr>break;\<cr>default:\<cr>break;\<cr>}"
 
-let g:template['c']['cl'] = "class \<cr>{\<cr>};".repeat("\<left>", 5)
-let g:template['c']['su'] = "struct \<cr>{\<cr>};".repeat("\<left>", 5)
+let g:template['c']['cl'] = "class \<cr>{\<cr>};"
+let g:template['c']['su'] = "struct \<cr>{\<cr>};"
 
 " ---------------------------------------------
 " C++ templates
